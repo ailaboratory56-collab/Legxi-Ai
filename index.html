@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legxi AI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #9b2fae, #ff4e50);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+      text-align: center;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header {
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      padding: 12px 25px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #2a5298;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Dashboard Section */
+    #dashboard {
+      display: none;
+      padding: 20px;
+    }
+
+    .feature {
+      margin: 15px 0;
+    }
+
+    /* Settings Slider */
+    #settingsPanel {
+      position: fixed;
+      right: -300px;
+      top: 0;
+      width: 300px;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      padding: 20px;
+      transition: right 0.4s ease;
+    }
+
+    #settingsPanel.active {
+      right: 0;
+    }
+
+    .settings-item {
+      margin: 15px 0;
+      padding: 10px;
+      border-bottom: 1px solid white;
+      text-align: left;
+    }
+
+    .settings-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: black;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Legxi AI</header>
+
+  <!-- Main Screen -->
+  <div class="container" id="mainScreen">
+    <h2>Welcome to Legxi AI 🚀</h2>
+    <button class="btn" onclick="openDashboard()">Login</button>
+    <button class="btn">Sign Up with Google</button>
+    <button class="btn">Sign Up with Phone</button>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard">
+    <h2>Dashboard</h2>
+    <button class="settings-btn" onclick="toggleSettings()">⚙ Settings</button>
+    <div class="feature"><button class="btn">TTS (Text-to-Speech)</button></div>
+    <div class="feature"><button class="btn">TTAC (Animation Characters)</button></div>
+    <div class="feature"><button class="btn">TTAG (Animation Graphics)</button></div>
+    <div class="feature"><button class="btn">AI Script Creator</button></div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settingsPanel">
+    <h3>⚙ Settings</h3>
+    <div class="settings-item">Profile</div>
+    <div class="settings-item">Account & Security</div>
+    <div class="settings-item">Subscription</div>
+    <div class="settings-item">Preferences</div>
+    <div class="settings-item">Support</div>
+  </div>
+
+  <footer>© 2025 Legxi AI</footer>
+
+  <script>
+    function openDashboard() {
+      document.getElementById('mainScreen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+    }
+
+    function toggleSettings() {
+      document.getElementById('settingsPanel').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

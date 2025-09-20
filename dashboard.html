@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Legxi AI - Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg-lines" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="container">
+  <div class="app-grid">
+    <aside class="sidebar">
+      <div class="logo">Legxi AI</div>
+      <div class="user-menu">
+        <div class="user-avatar" title="You"></div>
+      </div>
+      <nav style="margin-top:14px">
+        <a class="btn" href="tts.html">TTS</a><br>
+        <a class="btn" href="ttac.html">TTAC</a><br>
+        <a class="btn" href="ttag.html">TTAG</a><br>
+        <a class="btn" href="script.html">AI Script</a><br>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <header style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Dashboard</h2>
+        <button class="btn" id="open-settings">⚙ Settings</button>
+      </header>
+
+      <section style="margin-top:18px">
+        <div class="features-grid">
+          <div class="card">
+            <h3>🎤 TTS</h3>
+            <p>Convert text into speech with multi-language voices.</p>
+            <div class="sub-card">
+              <div>Free Trial: 2 days</div>
+              <a class="btn" href="tts.html">Open</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🎭 TTAC</h3>
+            <p>Text to animated characters (dialogues + voice)</p>
+            <div class="sub-card">
+              <div>Free: 5 dialogues/day</div>
+              <a class="btn" href="ttac.html">Open</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>✨ TTAG</h3>
+            <p>Animated graphics from text quickly.</p>
+            <div class="sub-card">
+              <div>Free: 3 animations/day</div>
+              <a class="btn" href="ttag.html">Open</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>✍️ AI Script Creator</h3>
+            <p>Enter an idea and generate a ready-to-use script.</p>
+            <div class="sub-card">
+              <div>Free: 2 scripts/day</div>
+              <a class="btn" href="script.html">Open</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Settings slider panel -->
+<aside id="settingsPanel" class="settings-panel" aria-hidden="true">
+  <h3>Settings</h3>
+  <div class="field"><label>Profile name</label><input type="text" placeholder="Your name"></div>
+  <div class="field"><label>Default language</label><select><option>English</option><option>Hindi</option><option>Telugu</option></select></div>
+  <div class="field"><label>Theme</label><select><option>Dark</option><option>Light</option></select></div>
+  <div style="margin-top:10px"><button class="btn" id="close-settings">Close</button></div>
+  <footer style="margin-top:20px">© 2025 Legxi AI</footer>
+</aside>
+
+<script>
+const panel = document.getElementById('settingsPanel');
+document.getElementById('open-settings').addEventListener('click',()=>panel.classList.add('open'));
+document.getElementById('close-settings').addEventListener('click',()=>panel.classList.remove('open'));
+</script>
+</body>
+</html>
