@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legxi AI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legxi AI - Home</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-    }
-    .container {
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
-      color: #fff;
     }
-    .container h1 {
-      margin-bottom: 15px;
+
+    h1 {
       font-size: 2.5rem;
+      margin-bottom: 20px;
     }
-    .container p {
-      margin-bottom: 30px;
-      font-size: 1.2rem;
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     .btn {
-      display: block;
-      width: 220px;
-      margin: 12px auto;
-      padding: 12px;
-      background: #fff;
-      color: #2575fc;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
       transition: 0.3s;
     }
+
     .btn:hover {
-      background: #2575fc;
-      color: #fff;
+      background: white;
+      color: #2a5298;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Legxi AI</h1>
-    <p>Your Creative AI Studio 🚀</p>
-    <a href="#" class="btn">Sign Up with Gmail</a>
-    <a href="#" class="btn">Login with Phone</a>
+  <h1>Welcome to Legxi AI</h1>
+  <p>Hello, User 👋</p>
+  
+  <div class="menu">
+    <button class="btn">AI Chat</button>
+    <button class="btn">Profile</button>
+    <button class="btn">Settings</button>
   </div>
+
+  <footer>© 2025 Legxi AI</footer>
 </body>
 </html>
