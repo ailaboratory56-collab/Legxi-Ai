@@ -3,67 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legxi AI - Home</title>
+  <title>Legxi AI - Dashboard</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background: #f4f6f9;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #2a5298;
+      color: white;
       height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar h2 {
+      margin-bottom: 30px;
       text-align: center;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .menu {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 2px solid white;
-      padding: 15px 30px;
-      border-radius: 12px;
-      font-size: 1.2rem;
+    .sidebar a {
+      display: block;
       color: white;
-      cursor: pointer;
+      text-decoration: none;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
       transition: 0.3s;
     }
-
-    .btn:hover {
+    .sidebar a:hover {
       background: white;
       color: #2a5298;
     }
 
-    footer {
-      position: absolute;
-      bottom: 15px;
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #2a5298;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .subscription {
+      margin-top: 15px;
+      padding: 12px;
+      background: #f0f4ff;
+      border: 1px solid #d0d9ff;
+      border-radius: 8px;
       font-size: 0.9rem;
-      opacity: 0.7;
+    }
+    .upgrade-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #2a5298;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .upgrade-btn:hover {
+      background: #1e3c72;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Legxi AI</h1>
-  <p>Hello, User 👋</p>
-  
-  <div class="menu">
-    <button class="btn">AI Chat</button>
-    <button class="btn">Profile</button>
-    <button class="btn">Settings</button>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Legxi AI</h2>
+    <a href="#">Profile</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
   </div>
 
-  <footer>© 2025 Legxi AI</footer>
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Dashboard</h1>
+
+    <!-- TTS -->
+    <div class="feature">
+      <h2>🎤 TTS (Text to Speech)</h2>
+      <p>Enter your text and convert into speech.</p>
+      <div class="subscription">
+        Free Trial: 10 conversions left <br>
+        <a href="#" class="upgrade-btn">Upgrade to Premium</a>
+      </div>
+    </div>
+
+    <!-- TTAG -->
+    <div class="feature">
+      <h2>✨ TTAG (Text to Animation Graphics)</h2>
+      <p>Convert text into simple animated graphics.</p>
+      <div class="subscription">
+        Free Plan: 3 animations/day <br>
+        <a href="#" class="upgrade-btn">Upgrade to Premium</a>
+      </div>
+    </div>
+
+    <!-- TTAC -->
+    <div class="feature">
+      <h2>🎭 TTAC (Text to Animation Characters)</h2>
+      <p>Make cartoon characters speak your dialogues.</p>
+      <div class="subscription">
+        Free: 5 dialogues/day <br>
+        <a href="#" class="upgrade-btn">Upgrade to Premium</a>
+      </div>
+    </div>
+
+    <!-- Script Creator -->
+    <div class="feature">
+      <h2>📜 AI Script Creator</h2>
+      <p>Generate creative scripts automatically.</p>
+      <div class="subscription">
+        Free: 2 scripts/day <br>
+        <a href="#" class="upgrade-btn">Upgrade to Premium</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
