@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 50px;
+}
+
+.login-box {
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7eb3;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+textarea, input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.ads-box {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  color: #aaa;
+  padding: 10px;
+  text-align: center;
+}
+
+.settings-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #111;
+  padding: 20px;
+  display: none;
+}
+
+.close-btn {
+  float: right;
+  background: red;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
