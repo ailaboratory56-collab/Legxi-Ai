@@ -1,77 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legxi-AI - Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google AdSense Verification Code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6241535934935587"
+          crossorigin="anonymous"></script>
 </head>
 <body>
-  <h2>Login</h2>
+  <header class="page-header">Sign Up — Legxi-AI</header>
 
-  <!-- Phone Number Input -->
-  <input type="text" id="phoneNumber" placeholder="+91XXXXXXXXXX">
-  <div id="recaptcha-container"></div>
-  <button onclick="sendOTP()">Send OTP</button>
+  <main class="form-main">
+    <div class="form-box">
+      <h2>Create account with Phone</h2>
 
-  <!-- OTP Input -->
-  <input type="text" id="otp" placeholder="Enter OTP">
-  <button onclick="verifyOTP()">Verify OTP</button>
+      <label class="label">Phone (international)</label>
+      <input id="phone" class="input" type="tel" placeholder="+91XXXXXXXXXX" />
 
-  <p id="result"></p>
+      <div id="recaptcha-container" style="margin:10px 0;"></div>
 
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-    import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+      <div class="row">
+        <button id="sendOtpBtn" class="btn" type="button">Send OTP</button>
+      </div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAGSQvrIlIfb2qY_bXsnExIs-a3NrETeB0",
-      authDomain: "legxi-ai.firebaseapp.com",
-      projectId: "legxi-ai",
-      storageBucket: "legxi-ai.firebasestorage.app",
-      messagingSenderId: "531504881019",
-      appId: "1:531504881019:web:cc9808e1735a495aa1f1de",
-      measurementId: "G-QMRZ6TX18E"
-    };
+      <label class="label">Enter OTP</label>
+      <input id="otp" class="input" type="text" placeholder="123456" />
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+      <div class="row">
+        <button id="verifyOtpBtn" class="btn" type="button">Verify & Create</button>
+      </div>
 
-    // Recaptcha setup
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
-      size: "normal",
-      callback: (response) => {
-        console.log("Recaptcha verified");
-      }
-    });
+      <p id="signupMessage" class="message"></p>
 
-    let confirmationResult;
+      <p class="small">Already have an account? <a href="login.html">Login</a></p>
+      <p class="small"><a href="index.html">Back to Home</a></p>
+    </div>
+  </main>
 
-    // Send OTP
-    window.sendOTP = function() {
-      const phoneNumber = document.getElementById("phoneNumber").value;
-      signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier)
-        .then((result) => {
-          confirmationResult = result;
-          document.getElementById("result").innerText = "OTP sent!";
-        })
-        .catch((error) => {
-          document.getElementById("result").innerText = error.message;
-        });
-    }
-
-    // Verify OTP
-    window.verifyOTP = function() {
-      const code = document.getElementById("otp").value;
-      confirmationResult.confirm(code)
-        .then((result) => {
-          const user = result.user;
-          document.getElementById("result").innerText = "Login success ✅";
-        })
-        .catch((error) => {
-          document.getElementById("result").innerText = error.message;
-        });
-    }
-  </script>
+  <!-- app.js -->
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
