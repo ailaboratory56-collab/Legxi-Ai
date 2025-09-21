@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legxi-Ai | Login</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legxi-Ai | Welcome</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div class="container">
-    <h1 class="app-title">Welcome to Legxi-Ai</h1>
+<body class="gradient-bg">
 
-    <div class="login-box">
-      <input type="text" id="email" placeholder="Enter your Email" />
-      <button onclick="sendOTP()">Get OTP</button>
+  <div class="welcome-container">
+    <h1>🚀 Welcome to <span class="brand">Legxi-Ai</span></h1>
+    <p>Your AI Lab for Voice, Script & Animation</p>
 
-      <div id="otp-section" style="display:none;">
-        <input type="text" id="otp" placeholder="Enter OTP" />
-        <button onclick="verifyOTP()">Login</button>
-      </div>
-
-      <p class="small-text">
-        New here? <a href="#">Signup</a>
-      </p>
+    <div class="auth-buttons">
+      <button onclick="openLogin()">Login</button>
+      <button onclick="openSignup()">Signup</button>
     </div>
   </div>
 
-  <!-- Ads Placeholder -->
-  <div class="ads-box">
-    <p>Ad Banner Here</p>
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login with OTP</h2>
+      <input type="email" id="loginEmail" placeholder="Enter your email">
+      <button onclick="sendOTP()">Send OTP</button>
+      <input type="text" id="loginOtp" placeholder="Enter OTP">
+      <button onclick="verifyLogin()">Verify & Continue</button>
+    </div>
   </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Create Account</h2>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button onclick="completeSignup()">Signup</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
