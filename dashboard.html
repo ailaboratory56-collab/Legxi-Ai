@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legxi-AI - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Google AdSense Verification Code -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6241535934935587"
+          crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="page-header">
+    <span>Dashboard</span>
+    <div class="header-actions">
+      <button class="btn small" id="logoutBtn">Logout</button>
+      <button class="btn small" id="openSettingsBtn">⚙ Settings</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="menu-grid">
+      <a class="card" href="tts.html"> Text-to-Speech (TTS)</a>
+      <a class="card" href="ttac.html"> Text-to-Animation Character (TTAC)</a>
+      <a class="card" href="ttag.html"> Text-to-Animation Graphic (TTAG)</a>
+      <a class="card" href="script.html"> AI Script Creator</a>
+    </div>
+
+    <div class="ads-box">Advertisement</div>
+  </main>
+
+  <!-- Settings slider panel (overlay) -->
+  <aside id="settingsPanel" class="settings-panel">
+    <button id="closeSettingsBtn" class="close-x">❌</button>
+    <h3>Settings</h3>
+    <ul class="settings-list">
+      <li> Profile</li>
+      <li> Account & Security</li>
+      <li> Subscription</li>
+      <li>⚙ Preferences</li>
+      <li> Support</li>
+    </ul>
+  </aside>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
