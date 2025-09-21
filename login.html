@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Legxi-AI</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Login</title>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Login with OTP</h2>
-    <input type="text" id="phone" placeholder="Enter phone number (+91...)">
-    <div id="recaptcha-container"></div>
-    <button onclick="sendOTP()">Send OTP</button>
+  <h2>Login</h2>
 
-    <input type="text" id="otp" placeholder="Enter OTP">
-    <button onclick="verifyOTP()">Verify OTP</button>
-  </div>
+  <!-- Phone Number Input -->
+  <input type="text" id="phoneNumber" placeholder="+91XXXXXXXXXX">
+  <div id="recaptcha-container"></div>
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <!-- OTP Input -->
+  <input type="text" id="otp" placeholder="Enter OTP">
+  <button onclick="verifyOTP()">Verify OTP</button>
+
+  <p id="result"></p>
 
   <!-- Firebase SDK -->
   <script type="module">
@@ -35,38 +37,41 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-      'size': 'normal',
-      'callback': (response) => {
+    // Recaptcha setup
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
+      size: "normal",
+      callback: (response) => {
         console.log("Recaptcha verified");
       }
     });
 
     let confirmationResult;
 
-    window.sendOTP = function () {
-      const phoneNumber = document.getElementById("phone").value;
+    // Send OTP
+    window.sendOTP = function() {
+      const phoneNumber = document.getElementById("phoneNumber").value;
       signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier)
         .then((result) => {
           confirmationResult = result;
-          alert("OTP sent!");
+          document.getElementById("result").innerText = "OTP sent!";
         })
         .catch((error) => {
-          alert(error.message);
+          document.getElementById("result").innerText = error.message;
         });
-    };
+    }
 
-    window.verifyOTP = function () {
-      const otp = document.getElementById("otp").value;
-      confirmationResult.confirm(otp)
+    // Verify OTP
+    window.verifyOTP = function() {
+      const code = document.getElementById("otp").value;
+      confirmationResult.confirm(code)
         .then((result) => {
-          alert("Login Successful!");
-          window.location.href = "dashboard.html";
+          const user = result.user;
+          document.getElementById("result").innerText = "Login success ✅";
         })
         .catch((error) => {
-          alert("Invalid OTP");
+          document.getElementById("result").innerText = error.message;
         });
-    };
+    }
   </script>
 </body>
 </html>
